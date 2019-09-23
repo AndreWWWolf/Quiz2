@@ -7,7 +7,7 @@ class UsersController < ApplicationController
         @user = User.new user_params
         if @user.save
             session[:user_id] = @user.id
-            redirect_to ideas_path, notice: "What's happening? Got any Ideas to get off your chest?"
+            redirect_to ideas_path, notice: "Welcome to the Idea Factory! Got an Idea?"
         else
             render :new
         end

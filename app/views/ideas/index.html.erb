@@ -3,7 +3,7 @@
         <h1><%= link_to idea.title, idea_path(idea.id)%></h1>
         <p><%= idea.description%></p>
         <div>
-            <p><%= idea.user.full_name%>'s idea with <%= idea.likers.count%> likes</p>
+            <p><b><%= idea.user.full_name%></b>'s idea with <%= idea.likers.count%> likes</p>
         </div>
         <hr/>    
     <% end %>

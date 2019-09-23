@@ -26,7 +26,7 @@ class IdeasController < ApplicationController
     
     def destroy
         @idea.destroy
-        redirect_to ideas_path, notice: "That thing is outta here!"
+        redirect_to ideas_path, notice: "Poof! gone."
     end
     
     def edit

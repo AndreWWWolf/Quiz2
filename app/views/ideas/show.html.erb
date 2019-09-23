@@ -1,7 +1,7 @@
 <div class="layout">
     <h1><%=@idea.title%></h1>
     <p><%=@idea.description%></p>
-    <small>This little brain teaser was brought to you by <%= @idea.user.full_name %> <%= time_ago_in_words(@idea.created_at)%> ago </small>
+    <small>This little brain teaser was brought to you by</small> <b><%= @idea.user.full_name %></b> <small><%= time_ago_in_words(@idea.created_at)%> ago </small>
 
     <div class='edit delete'>
         <%= link_to "Edit", edit_idea_path(@idea)%> | 
@@ -16,7 +16,7 @@
     <% end %>
     <small><%= @idea.likers.count%> people thought that was worthy of sticking their thumb in the air</small>
 
-    <h2>Review this idea</h2>
+    <h4>Review this idea</h4>
     <%= form_with model: [@idea, @review], local: true do |form| %>
         <% if @review.errors.any? %>
             <ul>
