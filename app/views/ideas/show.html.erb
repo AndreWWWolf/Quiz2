@@ -35,6 +35,6 @@
 
     <% @idea.reviews.each do |review|%>
         <p><%= review.body%></p>
-        <small>You know who had something to say about this? <%= review.user.full_name %> <%= time_ago_in_words(review.created_at)%> ago | <%= link_to "Delete", idea_review_path(review.idea_id, review), method: :delete, data: {confirm: "Are you sure you want to delete your review?"}%></small>
+        <small>You know who said that about this post?</small>  <b> <%= review.user.full_name %> </b> <small> <%= time_ago_in_words(review.created_at)%> ago | <%= link_to "Delete", idea_review_path(review.idea_id, review), method: :delete, data: {confirm: "Are you sure you want to delete your review?"}%></small>
     <% end %>
 </div>

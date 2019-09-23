@@ -10,7 +10,7 @@ Review.delete_all
 Idea.delete_all
 User.delete_all
 
-20.times.each do
+25.times.each do
     User.create(
         first_name: Faker::Superhero.name,
         last_name: Faker::GreekPhilosophers.name,
@@ -20,7 +20,7 @@ User.delete_all
 end
 users = User.all
 
-10.times.each do
+50.times.each do
     i = Idea.create(
         title: Faker::TvShows::SiliconValley.invention,
         description: Faker::Quote.yoda,
