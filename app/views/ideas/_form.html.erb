@@ -1,0 +1,21 @@
+<div class="layout">
+<% if @idea.errors.any? %>
+    <ul>
+        <% @idea.errors.full_messages.each do |error|%>
+            <li><%= error%></li>
+        <% end %>
+    </ul>
+<% end %>
+
+    <%= form_with model: @idea, local: true do |form| %>
+        <div class="text-field">
+            <div class='label'><%= form.label :title%></div>
+            <%= form.text_field :title%>
+        </div>
+        <div class="text-field">
+            <div class='label'><%= form.label :description%></div>
+            <%= form.text_area :description%>
+        </div>
+        <div class="button"><%= form.submit%></div>
+    <% end %>
+</div>
