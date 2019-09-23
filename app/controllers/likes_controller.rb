@@ -6,7 +6,7 @@ class LikesController < ApplicationController
     def create
         @like = Like.new(user_id: current_user.id, idea_id: @idea.id )
         if @like.save
-            redirect_to @idea, notice: "Liked"
+            redirect_to @idea, notice: "Thumb in the air!"
         else
             redirect_to ideas_path, notice: "Try again!"
         end
@@ -15,7 +15,7 @@ class LikesController < ApplicationController
     def destroy
         @like = @idea.likes.find_by(user_id: current_user.id)
         @like.destroy
-        redirect_to @idea, notice: "Unliked"
+        redirect_to @idea, notice: "Poof! gone."
     end
 
     private
@@ -25,6 +25,6 @@ class LikesController < ApplicationController
     end
 
     def like!
-        redirect_to ideas_path, alert: "You can't like/un-like your own idea!" unless can? :like, @idea
+        redirect_to ideas_path, alert: "Trying to like your own idea? what is next, buying follows? You cannot do that!" unless can? :like, @idea
     end
 end

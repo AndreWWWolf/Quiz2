@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
         @review.user = current_user
         @review.idea = @idea
         if @review.save
-            redirect_to idea_path(@review.idea_id), notice: "Thank you for the review!"
+            redirect_to idea_path(@review.idea_id), notice: "Your feedback is greatly appreciated! Unless its criticism, then cmon...really?"
         else
             render 'ideas/show', alert: "Unable to create a review! Try again."
         end
@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
         @review = Review.find params[:id]
         if can? :crud, @review
             @review.destroy
-            redirect_to idea_path(@review.idea_id), notice: "Review deleted!"
+            redirect_to idea_path(@review.idea_id), notice: "Poof! gone."
         else
             redirect_to ideas_path, alert: "Not Authorized!"
         end

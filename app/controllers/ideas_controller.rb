@@ -10,9 +10,9 @@ class IdeasController < ApplicationController
         @idea = Idea.new idea_params
         @idea.user = current_user
         if @idea.save
-            redirect_to @idea, notice: "New idea submitted!"
+            redirect_to @idea, notice: "Your thought is out there for the world to see!"
         else
-            render :new, alert: "Unable to create a new idea!"
+            render :new, alert: "We simply cannot put out something like that for the world! Please try something a little less brazen."
         end
     end
 
@@ -26,7 +26,7 @@ class IdeasController < ApplicationController
     
     def destroy
         @idea.destroy
-        redirect_to ideas_path, notice: "Idea deleted!"
+        redirect_to ideas_path, notice: "That thing is outta here!"
     end
     
     def edit
@@ -34,9 +34,9 @@ class IdeasController < ApplicationController
     
     def update
         if @idea.update idea_params
-            redirect_to @idea, notice: "Idea Updated!"
+            redirect_to @idea, notice: "Now the world is ready for v2.0, or v2.0.1. Either way, idea updated!"
         else
-            redirect_to ideas_path, alert: "Unable to update your idea. Try again!"
+            redirect_to ideas_path, alert: "Syntax Error: you crazy! Try again, we cannot update your idea like that!"
         end
     end
 

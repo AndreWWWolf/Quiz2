@@ -1,11 +1,11 @@
 <div class="layout">
     <h1><%=@idea.title%></h1>
     <p><%=@idea.description%></p>
-    <small>Posted by <%= @idea.user.full_name %> <%= time_ago_in_words(@idea.created_at)%></small>
+    <small>This little brain teaser was brought to you by <%= @idea.user.full_name %> <%= time_ago_in_words(@idea.created_at)%> ago </small>
 
     <div class='edit delete'>
         <%= link_to "Edit", edit_idea_path(@idea)%> | 
-        <%= link_to "Delete", idea_path(@idea), method: :delete, data: {confirm: "Are you sure you want to delete your post?"}%>
+        <%= link_to "Delete", idea_path(@idea), method: :delete, data: {confirm: "You cannot take this back...you sure this is what you want?"}%>
     </div>
 
     <% liker = @idea.likes.find_by(user: current_user)%>
@@ -14,7 +14,7 @@
     <% else %>
         <%= link_to "👍", idea_likes_path(@idea), method: :post%>
     <% end %>
-    <small><%= @idea.likers.count%> people like this idea</small>
+    <small><%= @idea.likers.count%> people thought that was worthy of sticking their thumb in the air</small>
 
     <h2>Review this idea</h2>
     <%= form_with model: [@idea, @review], local: true do |form| %>
@@ -35,6 +35,6 @@
 
     <% @idea.reviews.each do |review|%>
         <p><%= review.body%></p>
-        <small>Reviewed by <%= review.user.full_name %> <%= time_ago_in_words(review.created_at)%> | <%= link_to "Delete", idea_review_path(review.idea_id, review), method: :delete, data: {confirm: "Are you sure you want to delete your review?"}%></small>
+        <small>You know who had something to say about this? <%= review.user.full_name %> <%= time_ago_in_words(review.created_at)%> ago | <%= link_to "Delete", idea_review_path(review.idea_id, review), method: :delete, data: {confirm: "Are you sure you want to delete your review?"}%></small>
     <% end %>
 </div>

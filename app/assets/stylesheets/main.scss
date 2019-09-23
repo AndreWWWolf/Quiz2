@@ -1,15 +1,15 @@
-// html {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-// }
+html {
+   background-color: #E09722;
+}
 .nav-bar {
+    background-color: #E09722;
     display: flex;
     justify-content: space-between;
     max-height: 10%;
     align-items: center;
 }
 .title, .new-idea, .button {
+    background-color: #E09722;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,16 +18,18 @@
 
 .body {display: flex}
 .text-field {
+    background-color: papayawhip;
     padding:1em;
     display: flex;
     justify-content: space-between;
     max-width: 100%;
 }
-.logo { max-height: 20%}
+.logo { max-height: 35%; max-width: 35%}
 .sub-navigation {width: 50%; display: flex; justify-content: space-around; flex-direction: row;}
 .panel {display: flex; justify-content: space-around}
 
 .layout {
+    background-color: #E09722;
     display: flex;
     justify-content: space-between;
     align-items: center;
