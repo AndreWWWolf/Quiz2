@@ -51,6 +51,6 @@ class IdeasController < ApplicationController
     end
 
     def authorize!
-        redirect_to ideas_path, alert: "Not Authorized!" unless can? :crud, @idea
+        redirect_to ideas_path, alert: "That's not yours to change!" unless can? :crud, @idea
     end
 end

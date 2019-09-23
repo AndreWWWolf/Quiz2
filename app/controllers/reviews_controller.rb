@@ -19,7 +19,7 @@ class ReviewsController < ApplicationController
             @review.destroy
             redirect_to idea_path(@review.idea_id), notice: "Poof! gone."
         else
-            redirect_to ideas_path, alert: "Not Authorized!"
+            redirect_to ideas_path, alert: "That's not yours to change!"
         end
     end
 

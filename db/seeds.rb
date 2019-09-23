@@ -22,7 +22,7 @@ users = User.all
 
 50.times.each do
     i = Idea.create(
-        title: Faker::TvShows::SiliconValley.invention,
+        title: Faker::Beer.name,
         description: Faker::Quote.yoda,
         user: users.sample
     )
