@@ -4,7 +4,7 @@ Build a web app to post & discuss ideas with the following features built with R
 
 * Complete CRUD actions of idea posts
   * Only owners of the idea can delete/edit the post
-  * However, they are not permitted to like/un-like the post
+  * However, they are not permitted to like/un-like their own post
 
 * Post reviews on each idea for a discussion
   * Reviewers can only delete their own reviews
